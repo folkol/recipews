@@ -11,7 +11,7 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return format("%s\n%s\n%s", title, ingredients, image.length);
+        return format("%s\n%s\n%s", title, ingredients, image != null ? image : "lol");
     }
 
 
