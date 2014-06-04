@@ -1,11 +1,11 @@
-package recipe.ejb;
+package ejb;
 
 import java.util.Arrays;
 import java.util.List;
 
 import javax.ejb.Stateless;
 
-import recipe.model.Recipe;
+import model.Recipe;
 
 
 @Stateless

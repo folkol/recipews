@@ -1,4 +1,4 @@
-package recipe.rest;
+package ws;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -17,8 +17,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import recipe.ejb.RecipeService;
-import recipe.model.Recipe;
+import model.Recipe;
+import ejb.RecipeService;
 
 
 @Path("/recipes")

@@ -1,4 +1,4 @@
-package recipe;
+package ws;
 
 import static java.util.Arrays.asList;
 
@@ -8,11 +8,9 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import recipe.rest.RecipesResource;
 
-
-@ApplicationPath("/rest-api")
-public class JaxRSApplication extends Application {
+@ApplicationPath("/ws")
+public class WebService extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {

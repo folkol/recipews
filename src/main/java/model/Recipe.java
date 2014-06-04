@@ -1,4 +1,4 @@
-package recipe.model;
+package model;
 
 
 public class Recipe {
