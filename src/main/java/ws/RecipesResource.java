@@ -54,7 +54,7 @@ public class RecipesResource {
     @PUT
     @Path("{id}")
     public Response update(@PathParam("id") String id, Recipe recipe) {
-        recipe.id = id;
+        recipe.setId(id);
         recipeService.update(recipe);
         return Response.ok().build();
     }
