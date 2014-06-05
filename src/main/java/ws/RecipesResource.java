@@ -1,7 +1,6 @@
 package ws;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -36,13 +35,15 @@ public class RecipesResource {
 
     @GET
     @Path("{id}")
-    public Recipe get(@PathParam("id") String id) {
-        return recipeService.get(id);
+    public Response get(@PathParam("id") int id) {
+        Recipe recipe = recipeService.get(id);
+        return recipe == null ? Response.status(404).build() :
+                                Response.ok(recipe).build();
     }
 
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public Response add(Recipe recipe) throws URISyntaxException {
+    public Response add(Recipe recipe) {
         int id = recipeService.add(recipe);
         URI created = uriInfo.getBaseUriBuilder()
                              .path( RecipesResource.class )
@@ -53,7 +54,7 @@ public class RecipesResource {
 
     @PUT
     @Path("{id}")
-    public Response update(@PathParam("id") String id, Recipe recipe) {
+    public Response update(@PathParam("id") int id, Recipe recipe) {
         recipe.setId(id);
         recipeService.update(recipe);
         return Response.ok().build();

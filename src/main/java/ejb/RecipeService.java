@@ -1,25 +1,33 @@
 package ejb;
 
-import java.util.Arrays;
 import java.util.List;
 
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import model.Recipe;
 
 
-@Stateless
+@Stateful
 public class RecipeService {
+
+    @PersistenceContext(unitName = "recipes")
+    EntityManager em;
+
     public List<Recipe> getAll() {
-        return Arrays.asList(new Recipe(), new Recipe(), new Recipe());
+        TypedQuery<Recipe> q = em.createQuery("select r from Recipe r", Recipe.class);
+        return q.getResultList();
     }
 
-    public Recipe get(String id) {
-        return new Recipe();
+    public Recipe get(int id) {
+        return em.find(Recipe.class, id);
     }
 
     public int add(Recipe recipe) {
-        return 66;
+        em.persist(recipe);
+        return recipe.getId();
     }
 
     public void update(Recipe recipe) {

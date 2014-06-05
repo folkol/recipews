@@ -4,6 +4,7 @@
         http://java.sun.com/xml/ns/persistence
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
    <persistence-unit name="recipes">
+      <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
       <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
       <properties>
          <!-- Properties for Hibernate -->
