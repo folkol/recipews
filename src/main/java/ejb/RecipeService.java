@@ -13,7 +13,7 @@ import model.Recipe;
 @Stateful
 public class RecipeService {
 
-    @PersistenceContext(unitName = "recipes")
+    @PersistenceContext(unitName = "RecipeDS")
     EntityManager em;
 
     public List<Recipe> getAll() {
