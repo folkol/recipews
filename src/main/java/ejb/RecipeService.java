@@ -31,5 +31,6 @@ public class RecipeService {
     }
 
     public void update(Recipe recipe) {
+        em.merge(recipe);
     }
 }
