@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="recipe-app">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recipes</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/recipe.css" rel="stylesheet">
   </head>
-  <body ng-app="recipe-app">
-    <h1>Hello, world!</h1>
-
-    <div ng-controller="ListController" >
-        <button ng-click="myData.doClick(item, $event)">Send AJAX Request</button>
-        <h1>Recipes</h1>
-        <div ng-repeat="recipe in recipes">
-        {{ recipe }}
-        </div>
+  <body ng-controller="ListController">
+    <h1>Recipes</h1>
+    <div class="container">
+	  <div class="recipe" ng-repeat="recipe in recipes">
+	  <div>{{ recipe.title }}<button ng-click="remove(recipe.id)">X</button></div>
+	  <p>{{ recipe.ingredients }}</p>
+      </div>
     </div>
 
     <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/recipe.js"></script>
   </body>

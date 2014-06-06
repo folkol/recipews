@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -21,7 +22,6 @@ import ejb.RecipeService;
 
 
 @Path("/recipes")
-@Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class RecipesResource {
 
@@ -42,7 +42,7 @@ public class RecipesResource {
     }
 
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response add(Recipe recipe) {
         int id = recipeService.add(recipe);
         URI created = uriInfo.getBaseUriBuilder()
@@ -54,9 +54,17 @@ public class RecipesResource {
 
     @PUT
     @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") int id, Recipe recipe) {
         recipe.setId(id);
         recipeService.update(recipe);
+        return Response.ok().build();
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response remove(@PathParam("id") int id) {
+        recipeService.remove(id);
         return Response.ok().build();
     }
 }

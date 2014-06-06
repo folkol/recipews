@@ -33,4 +33,9 @@ public class RecipeService {
     public void update(Recipe recipe) {
         em.merge(recipe);
     }
+
+    public void remove(int id) {
+        Recipe recipe = em.find(Recipe.class, id);
+        em.remove(recipe);
+    }
 }

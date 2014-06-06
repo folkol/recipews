@@ -1,0 +1,24 @@
+.container {
+	max-width: 600px;
+}
+
+.recipe {
+	margin: 10px;
+	border: 1px black solid;
+	box-shadow: 2px 2px 1px lightgray;
+}
+
+.recipe div {
+	padding: 10px;
+}
+
+.recipe > div {
+	background-image: linear-gradient(lightgray, gray);
+	color: white;
+	text-shadow: 1px 1px 3px black;
+	font-weight: bold;
+}
+
+.recipe button {
+	float: right;
+}
