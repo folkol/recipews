@@ -7,11 +7,16 @@
     <title>Recipes</title>
     <link href="css/recipe.css" rel="stylesheet">
   </head>
-  <body ng-controller="ListController">
-    <h1>Recipes</h1>
+  <body ng-controller="ListController" ng-init="list()">
     <div class="container">
+
+      <div class="header">
+        <h1 ng-click="list()">RECIPES</h1>
+        <button>+</button>
+      </div>
+    
 	  <div class="recipe" ng-repeat="recipe in recipes">
-	  <div>{{ recipe.title }}<button ng-click="remove(recipe.id)">X</button></div>
+	  <div>{{ recipe.title }}<button ng-click="remove($index)">X</button></div>
 	  <div>{{ recipe.ingredients }}</div>
       </div>
     </div>
