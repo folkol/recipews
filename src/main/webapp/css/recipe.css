@@ -5,14 +5,15 @@ html, body {
 }
 
 .container {
-	left-border: 1px black solid;
-	right-border: 1px black solid;
+	border-left: 1px gray solid;
+	border-right: 1px gray solid;
 	max-width: 800px;
 	min-height: 100%;
 	background-image: radial-gradient(white, #ccc);
 	padding-top: 40px;
+	padding-bottom: 1px;
+	box-sizing: border-box;
 	position: relative;
-	border: 1px gray solid;
 }
 
 .header {
@@ -20,13 +21,15 @@ html, body {
     color: white;
     text-shadow: 0px 0px 5px black;
     font-weight: bold;
-    height: 37px;
-    box-shadow: 0px 2px 1px gray;
+    height: 38px;
     margin-bottom: 12px;
     position: fixed;
     top: 0px;
     width: 100%;
     max-width: 800px;
+    left: 0px;
+    border: 1px gray solid;
+    box-sizing: border-box;
 }
 
 .header h1 {
@@ -38,7 +41,7 @@ html, body {
 .header button {
 	float: right;
 	right: 5px;
-	top: 6px;
+	top: 5px;
 	position: relative;
 }
 
