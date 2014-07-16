@@ -7,8 +7,8 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Recipe {
-
+public class Recipe
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

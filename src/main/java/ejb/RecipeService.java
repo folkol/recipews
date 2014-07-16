@@ -11,8 +11,8 @@ import model.Recipe;
 
 
 @Stateful
-public class RecipeService {
-
+public class RecipeService
+{
     @PersistenceContext(unitName = "RecipeDS")
     EntityManager em;
 

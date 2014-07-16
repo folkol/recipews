@@ -23,8 +23,8 @@ import ejb.RecipeService;
 
 @Path("/recipes")
 @Produces(MediaType.APPLICATION_JSON)
-public class RecipesResource {
-
+public class RecipesResource
+{
     @Inject RecipeService recipeService;
     @Context UriInfo uriInfo;
 
